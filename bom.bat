@@ -1,0 +1,1 @@
+python sbom_scan_pipeline.py --scan-path "C:\\ai3" --subdir "gateway-windows-8.5.04.b1.12"
