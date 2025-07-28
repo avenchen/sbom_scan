@@ -37,7 +37,7 @@ pip install requests
 
 ### 4. 配置 Dependency-Track
 
-執行 [Dependency-Track](https://dependencytrack.org)
+透過 Docker-compose 安裝[Dependency-Track](https://dependencytrack.org)
 確保您的 Dependency-Track 伺服器正在運行，並取得：
 - 伺服器 URL
 - API 金鑰
