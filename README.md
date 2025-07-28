@@ -37,10 +37,11 @@ pip install requests
 
 ### 4. 配置 Dependency-Track
 
+執行 [Dependency-Track](https://dependencytrack.org)
 確保您的 Dependency-Track 伺服器正在運行，並取得：
 - 伺服器 URL
 - API 金鑰
-- 專案 UUID
+- 專案 UUID（可不指定）
 
 ## 配置檔案
 
@@ -80,13 +81,16 @@ run_sbom_scan.bat
 ```
 
 #### 簡化使用 (只需要指定掃描路徑)
+此範例是待掃描目錄為 C:\projects\myproject
+掃瞄時，會以第一個 “-” 前為 project 名稱， 後為版本名稱。如 apache-tomcat-9.0.80，apache為專案名稱，tomcat-9.0.80為版本名稱
+
 ```bash
-python sbom_scan_pipeline.py --scan-path "C:\projects\myproject" --subdir "myproject"
+python sbom_scan_pipeline.py --scan-path "C:\projects" --subdir "myproject"
 ```
 
 #### 使用參數
 ```bash
-run_sbom_scan.bat config.json "C:\tools\dependency-check\bin" "C:\projects\myproject" "myproject" "your_nvd_api_key"
+run_sbom_scan.bat config.json "C:\tools\dependency-check\bin" "C:\projects" "myproject" "your_nvd_api_key"
 ```
 
 ### 方法 3: 直接使用 Python 腳本
@@ -182,7 +186,7 @@ reports/
 ```batch
 @echo off
 set TOOL_PATH=C:\tools\dependency-check\bin
-set SCAN_PATH=C:\projects\myproject
+set SCAN_PATH=C:\projects
 set SUBDIR=myproject
 set NVD_API_KEY=your_nvd_api_key_here
 
@@ -193,10 +197,14 @@ run_sbom_scan.bat config.json "%TOOL_PATH%" "%SCAN_PATH%" "%SUBDIR%" "%NVD_API_K
 
 ```powershell
 $toolPath = "C:\tools\dependency-check\bin"
-$scanPath = "C:\projects\myproject"
+$scanPath = "C:\projects"
 $subdir = "myproject"
 $nvdApiKey = "your_nvd_api_key_here"
+```
 
+### Python 範例
+
+```python
 python sbom_scan_pipeline.py `
     --config config.json `
     --tool-path $toolPath `

@@ -20,8 +20,10 @@ run_sbom_scan.bat
 ```
 
 #### 方法 C: 命令行
+此範例是待掃描目錄為 C:\projects\myproject
+掃瞄時，會以第一個 “-” 前為 project 名稱， 後為版本名稱。如 apache-tomcat-9.0.80，apache為專案名稱，tomcat-9.0.80為版本名稱
 ```bash
-python sbom_scan_pipeline.py --scan-path "C:\projects\myproject" --subdir "myproject"
+python sbom_scan_pipeline.py --scan-path "C:\projects" --subdir "myproject"
 ```
 
 ## 📁 檔案說明
@@ -36,6 +38,7 @@ python sbom_scan_pipeline.py --scan-path "C:\projects\myproject" --subdir "mypro
 
 ## ⚙️ 配置檔案
 
+copy config.json.example 為 config.json
 編輯 `config.json`：
 
 ```json

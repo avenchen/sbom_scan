@@ -1,0 +1,13 @@
+{
+  "dependency_track": {
+    "server_url": "http://localhost:8081",
+    "api_key": "odt_a7jtEveU_CVrgCxtD9XNnTaGrSu3s9MRud4TCIhJo"
+  },
+  "dependency_check": {
+    "tool_path": "C:\\tools\\dependency-check\\bin",
+    "nvd_api_key": "your_nvd_api_key"
+  },
+  "bom": {
+    "default_file": "bom.json"
+  }
+} 

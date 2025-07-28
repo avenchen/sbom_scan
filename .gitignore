@@ -43,7 +43,7 @@ logs/
 reports/
 *.html
 *.json
-!config.json
+config.json
 
 # Temporary files
 *.tmp
