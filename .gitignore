@@ -43,7 +43,6 @@ logs/
 reports/
 *.html
 *.json
-config.json
 
 # Temporary files
 *.tmp
@@ -60,6 +59,7 @@ data/
 .env
 .env.local
 .env.*.local
+config.json
 
 # Backup files
 *.bak
